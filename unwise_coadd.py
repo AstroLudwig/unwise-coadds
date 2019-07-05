@@ -46,9 +46,13 @@ median_f = flat_median_f
 
 # GLOBALS:
 # Location of WISE Level 1b inputs
-wisedir = 'wise-frames'
 
-wisedirs = [wisedir, 'merge_p1bm_frm', 'neowiser-frames', 'neowiser2-frames', 'neowiser3-frames', 'neowiser4-frames']
+
+dirs = ['wise-frames', 'merge_p1bm_frm', 'neowiser-frames', 'neowiser2-frames', 'neowiser3-frames', 'neowiser4-frames']
+
+wisedirs = ["symlinks/" + dir for dir in dirs]
+
+wisedir = wisedirs[0]
 
 '''
 at NERSC:
@@ -594,7 +598,7 @@ def one_coadd(ti, band, W, H, pixscale, WISE,
             download = False
             if wdir is None:
                 download = allow_download
-                wdir = 'merge_p1bm_frm'
+                wdir = wisedirs[1] # 'merge_p1bm_frm'
 
             intfn = get_l1b_file(wdir, wise.scan_id, wise.frame_num, band)
             print('intfn', intfn)
