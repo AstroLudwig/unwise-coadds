@@ -49,6 +49,7 @@ wisedir = 'wise-frames'
 wisedirs = [wisedir, 'merge_p1bm_frm', 'neowiser-frames', 'neowiser2-frames',
             'neowiser3-frames', 'neowiser4-frames', 'neowiser5-frames']
 
+wisedirs = np.append(/global/homes/b/bludwig/Wise-Time-Domain-Survey/symlinks,wisedirs)
 '''
 at NERSC:
 ln -s /global/project/projectdirs/cosmo/work/wise/etc/etc_neo5 wise-frames
@@ -532,7 +533,7 @@ def one_coadd(ti, band, W, H, frames,
             download = False
             if wdir is None:
                 download = allow_download
-                wdir = 'merge_p1bm_frm'
+                wdir =  wisedirs[1] #'merge_p1bm_frm'
 
             intfn = get_l1b_file(wdir, wise.scan_id, wise.frame_num, band)
             debug('intfn', intfn)
