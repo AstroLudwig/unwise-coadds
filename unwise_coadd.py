@@ -49,7 +49,8 @@ wisedir = 'wise-frames'
 wisedirs = [wisedir, 'merge_p1bm_frm', 'neowiser-frames', 'neowiser2-frames',
             'neowiser3-frames', 'neowiser4-frames', 'neowiser5-frames']
 
-wisedirs = np.append(/global/homes/b/bludwig/Wise-Time-Domain-Survey/symlinks,wisedirs)
+wisedirs = ['/global/homes/b/bludwig/Wise-Time-Domain-Survey/symlinks/' + dir for dir in wisedirs]
+wisedir = wisedirs[0]
 '''
 at NERSC:
 ln -s /global/project/projectdirs/cosmo/work/wise/etc/etc_neo5 wise-frames
